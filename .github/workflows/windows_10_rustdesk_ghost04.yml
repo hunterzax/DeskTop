@@ -1,4 +1,4 @@
-name: Instalar Windows
+name: Install Windows
 
 on: [push, pull_request]
 
