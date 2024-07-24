@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const url = "https://dev-app.i24.dev";
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -18,6 +20,15 @@ app.get('/', (req, res) => {
 
 app.get('/items', (req, res) => {
   res.json(items);
+});
+
+app.get('/product',(req,res)=>{
+  res.json([
+    //[ 
+      { id:1,name:'kin',age: 9},
+      { id:2,name:'ken',age: 6}
+    //]
+  ])
 });
 
 app.get('/items/:id', (req, res) => {
@@ -53,5 +64,5 @@ app.delete('/items/:id', (req, res) => {
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running on ${url}`);
 });
